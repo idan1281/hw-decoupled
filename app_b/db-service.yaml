@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-service-internal
+spec:
+  type: ClusterIP
+  selector:
+    app: db
+    department: IT
+  ports:
+  - protocol: TCP
+    port: 5001
+    targetPort: 5001

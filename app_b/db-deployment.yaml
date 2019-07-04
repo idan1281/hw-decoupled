@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  selector:
+    matchLabels:
+      app: db
+      department: IT
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: db
+        department: IT
+    spec:
+      containers:
+      - name: db
+        image: "eu.gcr.io/devops-test-245321/createdb"
